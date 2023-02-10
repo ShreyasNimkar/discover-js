@@ -17,9 +17,6 @@ const adminSchema = new mongoose.Schema({
 
 adminSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
-  if (this.password != this.confirmPassword)
-    console.log('Passwords do not match');
-  // return next(new AppError('Passwords do not match', 400));
   this.password = await bcrypt.hash(this.password, 12);
   this.confirmPassword = undefined;
   next();

@@ -14,7 +14,7 @@ const getAdmin = async (req, res) => {
 
 const updateAdmin = Protect(async (req, res) => {
   await connectToDB();
-  const admin = await req.user.update(req.body, { new: true });
+  const admin = await Admin.findByIdAndUpdate(req.user.id,req.body, { new: true });
   await disconnectFromDB();
   res.status(200).json({
     data: admin,

@@ -7,13 +7,17 @@ async function handler(req, res) {
   await connectToDB();
   const users = await Admin.find({});
   if (users.length > 0)
-    res.status(401).json({
+    return res.status(401).json({
       message: 'There can only be one admin on this site',
     });
-  else {
-    const newUser = await Admin.create(req.body);
-    createSendToken(newUser, 201, res);
-  }
+
+  if (req.body.password !== req.body.confirmPassword)
+    return res.status(401).json({
+      message: 'Passwords do not match.',
+    });
+
+  const newUser = await Admin.create(req.body);
+  createSendToken(newUser, 201, res);
   await disconnectFromDB();
 }
 
