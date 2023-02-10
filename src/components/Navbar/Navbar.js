@@ -3,10 +3,10 @@ import React from "react";
 const Navbar = () => {
   return (
     <>
-      <nav className="flex items-center justify-between flex-wrap bg-black p-2 ">
+      <nav className="flex items-center justify-between flex-wrap bg-black h-[8vh] z-50">
         <div className="flex items-center flex-shrink-0 text-white ml-4">
-          <span className="font-semibold text-xl tracking-[0.75em]">
-            Discover JS
+          <span className="font-semibold text-xl tracking-[0.4em]">
+            What&apos;s Next ?
           </span>
         </div>
         <div className="block lg:hidden">

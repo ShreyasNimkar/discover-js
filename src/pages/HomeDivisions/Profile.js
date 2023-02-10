@@ -2,13 +2,10 @@ import Navbar from "@/components/Navbar/Navbar";
 import React from "react";
 import Image from "next/image";
 
-const profile = () => {
+const Profile = () => {
   return (
-    <div className="overflow-hidden h-screen w-screen">
-      <nav className="sticky top-0">
-        <Navbar />
-      </nav>
-      <div className="w-full h-full flex justify-around items-center bg-pink-300">
+    <div className="w-full h-[92vh] flex justify-around items-center text-white bg-lightBlack">
+      <div className="flex h-full w-full items-center justify-around">
         <div className="h-full w-1/3 p-4 flex flex-col item-center justify-around">
           <div className="flex flex-col w-full h-full items-center justify-end">
             <div className="font-semibold text-3xl text-center mb-5">
@@ -29,4 +26,4 @@ const profile = () => {
   );
 };
 
-export default profile;
+export default Profile;
