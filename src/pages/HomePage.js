@@ -1,9 +1,10 @@
 import React from "react";
 import Navbar from "@/components/Navbar/Navbar";
 import Profile from "./HomeDivisions/Profile";
-import AboutMe from "./HomeDivisions/AboutMe";
+import AboutUs from "./HomeDivisions/AboutUs";
 
 import Domains from "./HomeDivisions/Domains";
+import Message from "./HomeDivisions/Message";
 const HomePage = () => {
   return (
     <div className="overflow-x-hidden h-screen w-screen">
@@ -11,8 +12,9 @@ const HomePage = () => {
         <Navbar />
       </nav>
       <Profile />
-      <AboutMe />
+      <AboutUs />
       <Domains />
+      <Message />
     </div>
   );
 };

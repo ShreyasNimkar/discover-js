@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        lightBlack: "#282828",
+        lightBlack: { 200: "#282828", 100: "#383838" },
+
         discoverPink: "#F25185",
         discoverBlue: "#60B3DC",
         discoverYellow: "#FDE12D",
