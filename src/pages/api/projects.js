@@ -1,24 +1,25 @@
 /* eslint-disable default-case */
-import Message from '@/models/messageModel';
+import Project from '@/models/projectsModel';
 import { connectToDB, disconnectFromDB } from '@/managers/DB';
+import Protect from '@/utils/protect';
 
 const getAllProjects = async (req, res) => {
   connectToDB();
-  const messages = await Message.find();
+  const projects = await Project.find();
   disconnectFromDB();
   res.status(200).json({
-    data: messages,
+    data: projects,
   });
 };
 
-const addProject = async (req, res) => {
+const addProject = Protect(async (req, res) => {
     connectToDB();
-    const message = await Message.create(req.body)
+    const project = await Project.create(req.body)
     disconnectFromDB();
     res.status(200).json({
-      data: message,
+      data: project,
     });
-  };
+  });
 
 const handler = async (req, res) => {
   switch (req.method) {

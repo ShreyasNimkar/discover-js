@@ -2,7 +2,7 @@
 import jwt from 'jsonwebtoken';
 import envHandler from '../managers/envHandler.js';
 
-export const createSendToken = (user, statusCode, res) => {
+const createSendToken = (user, statusCode, res) => {
   const token = jwt.sign({ id: user._id }, envHandler('JWT_KEY'), {
     expiresIn: envHandler('JWT_TIME') * 24 * 60,
   });
@@ -24,3 +24,5 @@ export const createSendToken = (user, statusCode, res) => {
     data: user,
   });
 };
+
+export default createSendToken;

@@ -1,15 +1,16 @@
 /* eslint-disable default-case */
 import Message from '@/models/messageModel';
 import { connectToDB, disconnectFromDB } from '@/managers/DB';
+import Protect from '@/utils/protect';
 
-const deleteMessage = async (req, res) => {
+const deleteMessage = Protect(async (req, res) => {
   connectToDB();
   await Message.findByIdAndDelete(req.query.id, req.body);
   disconnectFromDB();
   res.status(200).json({
     data: null,
   });
-};
+});
 
 const handler = async (req, res) => {
   switch (req.method) {

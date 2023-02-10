@@ -1,33 +1,33 @@
 /* eslint-disable default-case */
-import Project from '@/models/projectsModel';
+import User from '@/models/userModel';
 import { connectToDB, disconnectFromDB } from '@/managers/DB';
 import Protect from '@/utils/protect';
 
-const getProject = async (req, res) => {
+const getAdmin = async (req, res) => {
   connectToDB();
-  const project = await Project.findById(req.query.id);
+  const admin = await User.find({})[0];
   disconnectFromDB();
   res.status(200).json({
-    data: project,
+    data: admin,
   });
 };
 
-const updateProject = Protect(async (req, res) => {
+const updateAdmin = Protect(async (req, res) => {
   connectToDB();
-  const project = await Project.findByIdAndUpdate(req.query.id, req.body);
+  const admin = await req.user.update(req.body, { new: true });
   disconnectFromDB();
   res.status(200).json({
-    data: project,
+    data: admin,
   });
 });
 
 const handler = async (req, res) => {
   switch (req.method) {
     case 'GET':
-      await getProject(req, res);
+      await getAdmin(req, res);
       break;
     case 'PATCH':
-      await updateProject(req, res);
+      await updateAdmin(req, res);
       break;
   }
 };

@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
-import { connectToDB, disconnectFromDB } from '../../managers/DB';
+import { connectToDB, disconnectFromDB } from '@/managers/DB';
 import User from '@/models/userModel';
-import { createSendToken } from '@/controllers/authController';
+import createSendToken from '@/utils/createSendToken';
 
 async function handler(req, res) {
   if (req.method !== 'POST') return;
