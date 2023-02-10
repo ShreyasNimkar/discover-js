@@ -17,7 +17,6 @@ const createSendToken = (user, statusCode, res) => {
 
   if (envHandler('NODE_ENV') === 'prod') cookieSettings.secure = true;
 
-  res.cookie('token', token, cookieSettings);
   res.status(statusCode).json({
     status: 'success',
     token,

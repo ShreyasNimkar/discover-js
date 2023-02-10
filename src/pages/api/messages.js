@@ -12,14 +12,14 @@ const getAllProjects = async (req, res) => {
   });
 };
 
-const addProject =Protect(async (req, res) => {
-    connectToDB();
-    const message = await Message.create(req.body)
-    disconnectFromDB();
-    res.status(200).json({
-      data: message,
-    });
+const addProject = Protect(async (req, res) => {
+  connectToDB();
+  const message = await Message.create(req.body);
+  disconnectFromDB();
+  res.status(200).json({
+    data: message,
   });
+});
 
 const handler = async (req, res) => {
   switch (req.method) {

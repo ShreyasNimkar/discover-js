@@ -1,21 +1,21 @@
 /* eslint-disable default-case */
-import User from '@/models/userModel';
+import Admin from '@/models/adminModel';
 import { connectToDB, disconnectFromDB } from '@/managers/DB';
 import Protect from '@/utils/protect';
 
 const getAdmin = async (req, res) => {
-  connectToDB();
-  const admin = await User.find({})[0];
-  disconnectFromDB();
+  await connectToDB();
+  const admin = await Admin.find({});
+  await disconnectFromDB();
   res.status(200).json({
-    data: admin,
+    data: admin[0],
   });
 };
 
 const updateAdmin = Protect(async (req, res) => {
-  connectToDB();
+  await connectToDB();
   const admin = await req.user.update(req.body, { new: true });
-  disconnectFromDB();
+  await disconnectFromDB();
   res.status(200).json({
     data: admin,
   });

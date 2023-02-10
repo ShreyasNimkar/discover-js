@@ -21,6 +21,7 @@
         "no-underscore-dangle":"warn",
         "no-param-reassign":"warn",
         "no-unused-vars":"warn",
-        "consistent-return":"off"
+        "consistent-return":"off",
+        "import/no-unresolved":"off"
     }
 }

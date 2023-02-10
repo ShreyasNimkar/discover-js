@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 
-const userSchema = new mongoose.Schema({
+const adminSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-userSchema.pre('save', async function (next) {
+adminSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
   if (this.password != this.confirmPassword)
     console.log('Passwords do not match');
@@ -25,11 +25,11 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-userSchema.methods.correctPassword = async function (inPass, userPass) {
+adminSchema.methods.correctPassword = async function (inPass, userPass) {
   // eslint-disable-next-line no-return-await
   return await bcrypt.compare(inPass, userPass);
 };
 
-const User = mongoose.model('User', userSchema);
+const Admin = mongoose.model('Admin', adminSchema);
 
-export default User;
+export default Admin;

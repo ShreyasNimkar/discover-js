@@ -1,23 +1,25 @@
 /* eslint-disable import/no-unresolved */
 import { connectToDB, disconnectFromDB } from '@/managers/DB';
-import User from '@/models/userModel';
+import Admin from '@/models/adminModel';
 import createSendToken from '@/utils/createSendToken';
 
 async function handler(req, res) {
   if (req.method !== 'POST') return;
-  const { email, password } = req.body;
-  if (!email || !password)
+  const { name, password } = req.body;
+  if (!name || !password)
     res.status(400).json({
-      message: "Email or Password doesn't exists",
+      message: "Password doesn't exists",
     });
-  connectToDB();
-  const user = await User.findOne({ email }).select('+password');
-  disconnectFromDB();
-  if (!user || !(await user.correctPassword(password, user.password)))
-    res.status(400).json({
-      message: 'Incorrect Email or Password',
-    });
-  createSendToken(user, 200, res);
+  else {
+    await connectToDB();
+    const admin = await Admin.findOne({ name }).select('+password');
+    await disconnectFromDB();
+    if (!admin || !(await admin.correctPassword(password, admin.password)))
+      res.status(400).json({
+        message: 'Incorrect Password',
+      });
+    else createSendToken(admin, 200, res);
+  }
 }
 
 export default handler;
