@@ -4,18 +4,18 @@ import { connectToDB, disconnectFromDB } from '@/managers/DB';
 import Protect from '@/utils/protect';
 
 const getAllProjects = async (req, res) => {
-  connectToDB();
+  await connectToDB();
   const messages = await Message.find();
-  disconnectFromDB();
+  await disconnectFromDB();
   res.status(200).json({
     data: messages,
   });
 };
 
 const addProject = Protect(async (req, res) => {
-  connectToDB();
+  await connectToDB();
   const message = await Message.create(req.body);
-  disconnectFromDB();
+  await disconnectFromDB();
   res.status(200).json({
     data: message,
   });

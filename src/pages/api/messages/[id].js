@@ -4,9 +4,9 @@ import { connectToDB, disconnectFromDB } from '@/managers/DB';
 import Protect from '@/utils/protect';
 
 const deleteMessage = Protect(async (req, res) => {
-  connectToDB();
-  await Message.findByIdAndDelete(req.query.id, req.body);
-  disconnectFromDB();
+  await connectToDB();
+  await Message.findByIdAndDelete(req.query.id);
+  await disconnectFromDB();
   res.status(200).json({
     data: null,
   });
