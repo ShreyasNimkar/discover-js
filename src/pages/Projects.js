@@ -14,9 +14,6 @@ const Projects = () => {
           </div>
           <div className="p-3 overflow-y-scroll gap-3">
             <ProjectTab />
-            <ProjectTab />
-            <ProjectTab />
-            <ProjectTab />
           </div>
         </div>
       </div>
