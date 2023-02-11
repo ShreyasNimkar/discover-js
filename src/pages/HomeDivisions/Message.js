@@ -31,7 +31,7 @@ const Message = () => {
           <div className="w-1/3 h-full  flex items-center flex-col gap-4 justify-center">
             <p className="font-semibold  w-full py-4 text-5xl">Say Hi !</p>
             <Image
-              src="Mail.svg"
+              src="/contact-us.png"
               className="h-2/5 w-full"
               height={1000}
               alt="ppl"
