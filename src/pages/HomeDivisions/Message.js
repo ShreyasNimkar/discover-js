@@ -29,7 +29,7 @@ const Message = () => {
             </div>
           </div>
           <div className="w-1/3 h-full  flex items-center flex-col gap-4 justify-center">
-            <p className="font-semibold  w-full py-4 text-4xl">Contact Us</p>
+            <p className="font-semibold  w-full py-4 text-5xl">Say Hi !</p>
             <Image
               src="Mail.svg"
               className="h-2/5 w-full"
@@ -37,9 +37,9 @@ const Message = () => {
               alt="ppl"
               width={1000}
             />
-            <p className="text-md  w-full">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Officiis, suscipit.
+            <p className="text-xl  w-full">
+              You can reach out to us for any further doubts or queries through:
+              ask@csivit.com
             </p>
           </div>
         </div>

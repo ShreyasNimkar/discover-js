@@ -49,7 +49,7 @@ const Domains = () => {
             />
           </div>
           <div className="w-2/3 h-full flex items-center justify-center gap-5 flex-col px-9">
-            <p className="font-semibold text-4xl w-full">What we Do ?</p>
+            <p className="font-semibold text-5xl w-full">What we Do ?</p>
             <div className="w-full flex flex-wrap gap-2">
               {/* buttons */}
               {domains.map((domain, index) => {

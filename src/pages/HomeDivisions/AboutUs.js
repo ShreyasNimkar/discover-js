@@ -23,19 +23,14 @@ const AboutMe = () => {
       <div className="w-full h-[80vh] flex justify-around items-center bg-discoverBlue">
         <div className="flex items-center justify-around h-full w-full">
           <div className="w-2/3 h-full flex items-center flex-col gap-4 justify-around p-28">
-            <p className="font-semibold  w-full py-4 text-4xl">About Us</p>
+            <p className="font-semibold  w-full py-4 text-5xl">About Us</p>
             <p className="text-md  w-full">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Explicabo similique expedita, tenetur, praesentium sit deleniti
-              deserunt est animi laboriosam labore veritatis accusantium illum
-              magni atque non voluptatibus. Maiores voluptatum quas voluptate
-              quae vitae eligendi pariatur, repudiandae expedita possimus
-              recusandae esse explicabo et aut praesentium maxime saepe harum
-              ratione a vel?
-            </p>
-            <p className="text-md  w-full">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Officiis, suscipit.
+              The Computer Society of India is the largest body of computer
+              professionals in India. We are a group of skilled designers,
+              developers and tech enthusiasts who engage in a lot of projects
+              and hackathons. To help push technology forward, we organise a
+              wide range of workshops, conferences, events and competitions both
+              technical and non-technical.
             </p>
           </div>
           <div className="w-1/3 h-full">
