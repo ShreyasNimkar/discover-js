@@ -8,15 +8,15 @@ const MessageForm = () => {
       <form>
         <div className="form-group mb-6 text text-white flex items-center justify-between ">
           <label
-            for="toggleFour"
-            class="flex cursor-pointer select-none items-center gap-2"
+            htmlFor="toggleFour"
+            className="flex cursor-pointer select-none items-center gap-2"
           >
             Stay Anonymous ?
-            <div class="relative">
+            <div className="relative">
               <input
                 type="checkbox"
                 id="toggleFour"
-                class="sr-only"
+                className="sr-only"
                 role="switch"
 
                 // onChange={() => {
@@ -25,8 +25,8 @@ const MessageForm = () => {
                 //     : settoggleButton("on");
                 // }}
               />
-              <div class="box bg-dark block h-8 w-14 rounded-full"></div>
-              <div class="dot absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white transition"></div>
+              <div className="box bg-dark block h-8 w-14 rounded-full"></div>
+              <div className="dot absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white transition"></div>
             </div>
           </label>
         </div>

@@ -13,12 +13,13 @@ import Domains from "../components/HomeDivisions/Domains";
 import Message from "../components/HomeDivisions/Message";
 import ProjectTab from "@/components/ProjectTab/ProjectTab";
 import HomePage from "./HomePage";
+import AdminPanel from "./AdminPanel/AdminPanel";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <>
-      <div className="overflow-x-hidden h-screen w-screen">
+      {/* <div className="overflow-x-hidden h-screen w-screen">
         <nav className="sticky top-0 z-50">
           <Navbar />
         </nav>
@@ -26,7 +27,8 @@ export default function Home() {
         <AboutUs />
         <Domains />
         <Message />
-      </div>
+      </div> */}
+      <AdminPanel />
     </>
   );
 }

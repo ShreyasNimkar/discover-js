@@ -52,8 +52,8 @@ const Domains = () => {
             <p className="font-semibold text-5xl w-full">What we Do ?</p>
             <div className="w-full flex flex-wrap gap-2">
               {/* buttons */}
-              {domains.map((domain, index) => {
-                return <DomainTab domain={domain} key={index} />;
+              {domains.map((value, index) => {
+                return <DomainTab domain={value} key={index} />;
               })}
             </div>
           </div>
