@@ -7,27 +7,12 @@ const MessageForm = () => {
     <div className="block p-6  rounded-lg shadow-lg bg-lightBlack-200 ">
       <form>
         <div className="form-group mb-6 text text-white flex items-center justify-between ">
-          <label
-            htmlFor="toggleFour"
-            className="flex cursor-pointer select-none items-center gap-2"
-          >
-            Stay Anonymous ?
-            <div className="relative">
-              <input
-                type="checkbox"
-                id="toggleFour"
-                className="sr-only"
-                role="switch"
-
-                // onChange={() => {
-                //   toggleButton == "on"
-                //     ? settoggleButton("off")
-                //     : settoggleButton("on");
-                // }}
-              />
-              <div className="box bg-dark block h-8 w-14 rounded-full"></div>
-              <div className="dot absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white transition"></div>
-            </div>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer" />
+            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none   rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+            <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
+              Stay Anonymous?
+            </span>
           </label>
         </div>
         <div className="form-group mb-6">
